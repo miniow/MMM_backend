@@ -5,7 +5,7 @@ stwórz dwie bazy danych w projekcie WebaApi w pliku appsettings.json musisz pod
 
 
 ustaw projekt  domyślny na Infrastructure ( góra konsoli PM )
-![infrastruktura!!!](./pm.png)
+![infrastruktura!!!](pm.png)
 wpisz komendy:
 
 Add-Migration InitialMigrationForApplicationDb -Context ApplicationDbContext -OutputDir Migrations/ApplicationDbMigration -StartupProject WebApi
