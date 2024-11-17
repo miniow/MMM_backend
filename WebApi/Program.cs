@@ -1,44 +1,75 @@
-using System.Text.Json.Serialization;
 
+using Infrastructure.Data;
+using Microsoft.AspNetCore.Identity;
+using Serilog;
+using System.Security.Claims;
+using WebApi.Installers;
 namespace WebApi
 {
     public class Program
     {
+
         public static void Main(string[] args)
         {
-            var builder = WebApplication.CreateSlimBuilder(args);
+            var builder = WebApplication.CreateBuilder(args);
 
-            builder.Services.ConfigureHttpJsonOptions(options =>
+            var services = builder.Services;
+            var configuration = builder.Configuration;
+
+            services.InstallServicesInAssembly(configuration);
+
+
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddAuthorization();
+            builder.Services.AddAuthentication(options =>
             {
-                options.SerializerOptions.TypeInfoResolverChain.Insert(0, AppJsonSerializerContext.Default);
+                options.DefaultAuthenticateScheme = IdentityConstants.ApplicationScheme;
+                options.DefaultChallengeScheme = IdentityConstants.ApplicationScheme;
+                options.DefaultSignInScheme = IdentityConstants.ApplicationScheme;
+            })
+                .AddCookie(IdentityConstants.ApplicationScheme)
+                .AddBearerToken(IdentityConstants.BearerScheme);
+            builder.Services.AddIdentityCore<User>()
+                .AddEntityFrameworkStores<UserDbContext>()
+                .AddDefaultTokenProviders()
+                .AddApiEndpoints();
+
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll", builder =>
+                {
+                    builder
+                        .AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader();
+                });
             });
+
+            builder.Host.UseSerilog((context, configuration) =>
+                configuration.ReadFrom.Configuration(context.Configuration));
 
             var app = builder.Build();
 
-            var sampleTodos = new Todo[] {
-                new(1, "Walk the dog"),
-                new(2, "Do the dishes", DateOnly.FromDateTime(DateTime.Now)),
-                new(3, "Do the laundry", DateOnly.FromDateTime(DateTime.Now.AddDays(1))),
-                new(4, "Clean the bathroom"),
-                new(5, "Clean the car", DateOnly.FromDateTime(DateTime.Now.AddDays(2)))
-            };
+            if (app.Environment.IsDevelopment())
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI();
+            }
+            //app.MapGet("users/me", async (ClaimsPrincipal claims, UserDbContext context) =>
+            //{
+            //    string userId = claims.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value;
 
-            var todosApi = app.MapGroup("/todos");
-            todosApi.MapGet("/", () => sampleTodos);
-            todosApi.MapGet("/{id}", (int id) =>
-                sampleTodos.FirstOrDefault(a => a.Id == id) is { } todo
-                    ? Results.Ok(todo)
-                    : Results.NotFound());
+            //    return await context.Users.FindAsync(userId);
+            //}).RequireAuthorization();
+            app.UseCors("AllowAll");
+            app.UseSerilogRequestLogging();
+            app.UseHttpsRedirection();
+            app.UseAuthentication();
+            app.UseAuthorization();
 
+            app.MapControllers();
+            app.MapIdentityApi<User>();
             app.Run();
         }
-    }
-
-    public record Todo(int Id, string? Title, DateOnly? DueBy = null, bool IsComplete = false);
-
-    [JsonSerializable(typeof(Todo[]))]
-    internal partial class AppJsonSerializerContext : JsonSerializerContext
-    {
-
     }
 }

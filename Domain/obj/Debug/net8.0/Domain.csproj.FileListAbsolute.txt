@@ -10,3 +10,4 @@ C:\Users\zymci\source\repos\MarketingMixModeling\Domain\obj\Debug\net8.0\refint\
 C:\Users\zymci\source\repos\MarketingMixModeling\Domain\obj\Debug\net8.0\Domain.pdb
 C:\Users\zymci\source\repos\MarketingMixModeling\Domain\obj\Debug\net8.0\ref\Domain.dll
 C:\Users\zymci\source\repos\MarketingMixModeling\Domain\obj\Debug\net8.0\Domain.csproj.AssemblyReference.cache
+C:\Users\zymci\source\repos\MarketingMixModeling\Domain\obj\Debug\net8.0\Domain.sourcelink.json

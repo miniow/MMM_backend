@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EB482875-C72
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{9BB1C887-4935-4F1B-9646-71155E0EC53D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "D:\mmm-platform\services\DataIntegration\WebApi\WebApi.csproj", "{74A8BFDF-5276-4297-8D57-AE0BD2E374FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi\WebApi.csproj", "{74A8BFDF-5276-4297-8D57-AE0BD2E374FC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementy rozwiązania", "Elementy rozwiązania", "{EFE87D12-4B31-4DA7-B5E8-807AACD55032}"
 	ProjectSection(SolutionItems) = preProject
