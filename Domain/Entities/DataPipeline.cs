@@ -16,7 +16,7 @@ namespace Domain.Entities
         {
             public Guid Id { get; set; }
             public string Name { get; set; }
-            public ICollection<DataSource> DataSources { get; set; } = new List<DataSource>();
+            //public ICollection<DataSource> DataSources { get; set; } = new List<DataSource>();
         }
     }
     public class Connection
