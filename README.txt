@@ -5,6 +5,7 @@ stwórz dwie bazy danych w projekcie WebaApi w pliku appsettings.json musisz pod
 
 
 ustaw projekt  domyślny na Infrastructure ( góra konsoli PM )
+![infrastruktura!!!](./pm.png)
 wpisz komendy:
 
 Add-Migration InitialMigrationForApplicationDb -Context ApplicationDbContext -OutputDir Migrations/ApplicationDbMigration -StartupProject WebApi
@@ -19,7 +20,7 @@ Update-Database -Context UserDbContext -StartupProject WebApi
 sprawdź czy utworzyło tabele 
 
 wybierz profil https 
-
+![https!!!](./https.png)
 uruchom projekt (powinien działać )
 
 w przypadku braku komunikacji z reactem sprawdź konfiguracja portuw (po stronie react pliku \mmm-platform-main\src\api.ts linijka 4 po  stronie C# znajduje się to w pliku MarketingMixModeling\WebApi\Properties\launchSettings.json ) 

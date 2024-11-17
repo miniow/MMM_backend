@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\Infrastructure\\Migrations\\ApplicationDb\\20241117233559_InitialMigrationForFirstDb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Infrastructure\\Migrations\\ApplicationDb\\20241117233559_InitialMigrationForFirstDb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9BB1C887-4935-4F1B-9646-71155E0EC53D}|Infrastructure\\Infrastructure.csproj|c:\\users\\zymci\\source\\repos\\marketingmixmodeling\\infrastructure\\migrations\\applicationdb\\20241117233559_initialmigrationforfirstdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BB1C887-4935-4F1B-9646-71155E0EC53D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\applicationdb\\20241117233559_initialmigrationforfirstdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9BB1C887-4935-4F1B-9646-71155E0EC53D}|Infrastructure\\Infrastructure.csproj|c:\\users\\zymci\\source\\repos\\marketingmixmodeling\\infrastructure\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -71,8 +71,7 @@
               "RelativeToolTip": "Infrastructure\\Migrations\\ApplicationDbContext\\20241117233402_InitialMigrationForFirstDb.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T23:34:02.371Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-17T23:34:02.371Z"
             },
             {
               "$type": "Document",
@@ -84,8 +83,7 @@
               "RelativeToolTip": "Infrastructure\\Data\\ApplicationDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T23:09:37.596Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-17T23:09:37.596Z"
             },
             {
               "$type": "Document",
@@ -97,8 +95,7 @@
               "RelativeToolTip": "Domain\\Entities\\DataPipeline.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T23:32:57.803Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-17T23:32:57.803Z"
             },
             {
               "$type": "Document",
@@ -110,8 +107,7 @@
               "RelativeToolTip": "WebApi\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T23:04:33.462Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-17T23:04:33.462Z"
             },
             {
               "$type": "Document",
@@ -123,8 +119,7 @@
               "RelativeToolTip": "Infrastructure\\Data\\UserDbContext.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAAAB0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T00:08:04.778Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-13T00:08:04.778Z"
             },
             {
               "$type": "Document",
