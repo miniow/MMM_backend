@@ -7,8 +7,7 @@ Ten poradnik przeprowadzi Cię krok po kroku przez proces konfiguracji i urucham
 
 - Zainstalowany **Visual Studio** z obsługą .NET Core.
 - Zainstalowany **SQL Server** (lub kompatybilna baza danych).
-- Zainstalowane **Node.js** i **npm** (jeśli pracujesz z Reactem).
-- Zainstalowany **Git**.
+- Zainstalowane **Node.js** i **npm** 
 
 ---
 ## 📂 Kroki konfiguracji
