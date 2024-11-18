@@ -21,7 +21,7 @@ Update-Database -Context UserDbContext -StartupProject WebApi
 sprawdź czy utworzyło tabele
 
 wybierz profil https
-![https!!!](https.png)
+![https!!!](https.jpg)
 uruchom projekt (powinien działać )
 
 w przypadku braku komunikacji z reactem sprawdź konfiguracja portuw (po stronie react pliku \mmm-platform-main\src\api.ts linijka 4 po stronie C# znajduje się to w pliku MarketingMixModeling\WebApi\Properties\launchSettings.json )
