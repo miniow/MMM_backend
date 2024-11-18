@@ -1,14 +1,41 @@
-jak uruchomić poradnik dla opornych
+# Poradnik dla opornych 🚀
+Ten poradnik przeprowadzi Cię krok po kroku przez proces konfiguracji i uruchamiania projektu.
 
-1. stwórz dwie bazy danych w projekcie WebaApi w pliku appsettings.json musisz podmienić connection stringi
+---
 
-2. dodaj migracje Package menager console
+## 📋 Wymagania wstępne
 
-3. ustaw projekt domyślny na Infrastructure ( góra konsoli PM )
+- Zainstalowany **Visual Studio** z obsługą .NET Core.
+- Zainstalowany **SQL Server** (lub kompatybilna baza danych).
+- Zainstalowane **Node.js** i **npm** (jeśli pracujesz z Reactem).
+- Zainstalowany **Git**.
+
+---
+## 📂 Kroki konfiguracji
+
+### 1️⃣ Stwórz dwie bazy danych
+
+W pliku `appsettings.json` w projekcie **WebApi** skonfiguruj connection stringi do dwóch baz danych.
+
+Przykład sekcji `ConnectionStrings` w pliku `appsettings.json`:
+
+```json
+"ConnectionStrings": {
+  "ApplicationDbConnection": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=MarketingMixModelingDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False",
+  "UserDbConnection": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=UserDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False"
+}
+```
+
+---
+
+### 2️⃣ Dodaj migracje w Package Manager Console
+
+a) Ustaw projekt domyślny
+W górnej części Package Manager Console ustaw projekt domyślny na Infrastructure:
 
 ![infrastruktura!](pm.jpg)
 
-4. wpisz komendy:
+b) wpisz komendy:
 ```bash
 Add-Migration InitialMigrationForApplicationDb -Context ApplicationDbContext -OutputDir Migrations/ApplicationDbMigration -StartupProject WebApi
 
@@ -18,12 +45,60 @@ Add-Migration InitialMigrationForUserDb -Context UserDbContext -OutputDir Migrat
 
 Update-Database -Context UserDbContext -StartupProject WebApi
 ```
-5. sprawdź czy utworzyło tabele
 
-6 .wybierz profil https
+c) Zweryfikuj, czy tabele zostały poprawnie utworzone:
+Otwórz SQL Server Management Studio (SSMS) lub inne narzędzie do zarządzania SQL.
+Sprawdź, czy w bazach danych MarketingMixModelingDb i UserDb utworzyły się tabele na podstawie migracji.
+
+---
+
+### 3️⃣ Wybierz profil HTTPS
 
 ![https!!!](https.jpg)
 
-7. uruchom projekt (powinien działać )
+---
 
-w przypadku braku komunikacji z reactem sprawdź konfiguracja portuw (po stronie react pliku \mmm-platform-main\src\api.ts linijka 4 po stronie C# znajduje się to w pliku MarketingMixModeling\WebApi\Properties\launchSettings.json )
+### 4️⃣  Kliknij przycisk Run w Visual Studio lub użyj skrótu klawiszowego F5. Projekt powinien uruchomić się na profilu HTTPS.
+
+---
+
+# 🛠️ Rozwiązywanie problemów
+
+## Brak komunikacji z Reactem?
+Jeśli projekt backendowy (WebApi) nie komunikuje się poprawnie z frontendem React:
+
+### 1️⃣ Sprawdź konfigurację portów:
+
+Po stronie React (frontend): W pliku `mmm-platform-main/src/api.ts`, upewnij się, że port backendu jest poprawny. Zmień linijkę 2 na odpowiedni port, np.:
+
+```javascript
+const api = axios.create({
+  baseURL: 'https://localhost:7104', 
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+```
+
+Po stronie WebApi (backend): W pliku `MarketingMixModeling/WebApi/Properties/launchSettings.json`, upewnij się, że profil HTTPS jest poprawnie skonfigurowany, np.:
+
+```json
+   "https": {
+     "commandName": "Project",
+     "launchBrowser": true,
+     "launchUrl": "swagger",
+     "environmentVariables": {
+       "ASPNETCORE_ENVIRONMENT": "Development"
+     },
+     "dotnetRunMessages": true,
+     "applicationUrl": "https://localhost:7104;http://localhost:5112"
+```
+
+### 2️⃣ Zrestartuj zarówno backend (WebApi), jak i frontend (React).
+
+---
+
+# 🌟 Gotowe!
+Po wykonaniu wszystkich kroków Twój projekt powinien działać poprawnie. Jeśli masz pytania lub napotkasz problemy, skontaktuj się z Autorem projektu.
+
+---
