@@ -1,14 +1,14 @@
 jak uruchomić poradnik dla opornych
 
-stwórz dwie bazy danych w projekcie WebaApi w pliku appsettings.json musisz podmienić connection stringi
+1. stwórz dwie bazy danych w projekcie WebaApi w pliku appsettings.json musisz podmienić connection stringi
 
-- dodaj migracje Package menager console
+2. dodaj migracje Package menager console
 
-ustaw projekt domyślny na Infrastructure ( góra konsoli PM )
+3. ustaw projekt domyślny na Infrastructure ( góra konsoli PM )
 
 ![infrastruktura!](pm.jpg)
 
-wpisz komendy:
+4. wpisz komendy:
 
 Add-Migration InitialMigrationForApplicationDb -Context ApplicationDbContext -OutputDir Migrations/ApplicationDbMigration -StartupProject WebApi
 
@@ -18,10 +18,12 @@ Add-Migration InitialMigrationForUserDb -Context UserDbContext -OutputDir Migrat
 
 Update-Database -Context UserDbContext -StartupProject WebApi
 
-sprawdź czy utworzyło tabele
+5. sprawdź czy utworzyło tabele
 
-wybierz profil https
+6 .wybierz profil https
+
 ![https!!!](https.jpg)
-uruchom projekt (powinien działać )
+
+7. uruchom projekt (powinien działać )
 
 w przypadku braku komunikacji z reactem sprawdź konfiguracja portuw (po stronie react pliku \mmm-platform-main\src\api.ts linijka 4 po stronie C# znajduje się to w pliku MarketingMixModeling\WebApi\Properties\launchSettings.json )
