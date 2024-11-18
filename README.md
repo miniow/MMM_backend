@@ -9,7 +9,7 @@ jak uruchomić poradnik dla opornych
 ![infrastruktura!](pm.jpg)
 
 4. wpisz komendy:
-
+```bash
 Add-Migration InitialMigrationForApplicationDb -Context ApplicationDbContext -OutputDir Migrations/ApplicationDbMigration -StartupProject WebApi
 
 Update-Database -Context ApplicationDbContext -StartupProject WebApi
@@ -17,7 +17,7 @@ Update-Database -Context ApplicationDbContext -StartupProject WebApi
 Add-Migration InitialMigrationForUserDb -Context UserDbContext -OutputDir Migrations/UserDbMigration -StartupProject WebApi
 
 Update-Database -Context UserDbContext -StartupProject WebApi
-
+```
 5. sprawdź czy utworzyło tabele
 
 6 .wybierz profil https
