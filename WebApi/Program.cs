@@ -1,4 +1,5 @@
 
+using Domain.Entities;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Identity;
 using Serilog;
@@ -47,7 +48,6 @@ namespace WebApi
 
             builder.Host.UseSerilog((context, configuration) =>
                 configuration.ReadFrom.Configuration(context.Configuration));
-
             var app = builder.Build();
 
             if (app.Environment.IsDevelopment())
@@ -55,12 +55,12 @@ namespace WebApi
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-            //app.MapGet("users/me", async (ClaimsPrincipal claims, UserDbContext context) =>
-            //{
-            //    string userId = claims.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value;
+            app.MapGet("users/me", async (ClaimsPrincipal claims, UserDbContext context) =>
+            {
+                string userId = claims.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value;
 
-            //    return await context.Users.FindAsync(userId);
-            //}).RequireAuthorization();
+                return await context.Users.FindAsync(userId);
+            }).RequireAuthorization();
             app.UseCors("AllowAll");
             app.UseSerilogRequestLogging();
             app.UseHttpsRedirection();

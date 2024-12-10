@@ -1,61 +1,76 @@
-﻿
-using Microsoft.AspNetCore.Http;
+﻿using Application.DTOs;
+using Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Swashbuckle.AspNetCore.Annotations;
 
 namespace WebApi.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class DataPipelinesController : ControllerBase
     {
-    //    private readonly IDataPipelineService _dataPipelineService;
-    //    public DataPipelinesController(IDataPipelineService dataPipelineService)
-    //    {
-    //        _dataPipelineService = dataPipelineService;
-    //    }
+        private readonly IDataPipelineService _dataPipelineService;
 
-    //    [SwaggerOperation(Summary = "Retrieves all data pipelines")]
-    //    [HttpGet]
-    //    public IActionResult Get()
-    //    {
-    //        var dataPipelines = _dataPipelineService.GetAllDataPipeLines();
-    //        return Ok(dataPipelines);
-    //    }
-    //    [SwaggerOperation(Summary = "Retrieves a specific data pipeline by unique id")]
-    //    [HttpGet("{id}")]
-    //    public IActionResult Get(Guid id)
-    //    {
-    //        var dataPipeline = _dataPipelineService.GetDataPipeLine(id);
-    //        if(dataPipeline == null)
-    //        {
-    //            return NotFound();
-    //        }
-    //        return Ok(dataPipeline);
+        public DataPipelinesController(IDataPipelineService dataPipelineService)
+        {
+            _dataPipelineService = dataPipelineService;
+        }
 
-    //    }
-    //    [SwaggerOperation(Summary = "create a new data pipeline")]
-    //    [HttpPost]
-    //    public IActionResult Create(CreateDataPipelineDto newDataPipeline)
-    //    {
-    //        var dataPipeline = _dataPipelineService.AddNewDataPipeline(newDataPipeline);
-    //        return Created($"api/posts/{dataPipeline.Id}", dataPipeline);
-    //    }
+        // GET: api/DataPipelines/{id}
+        [HttpGet("{id:guid}")]
+        public async Task<ActionResult<DataPipelineDto>> Get(Guid id)
+        {
+            var pipeline = await _dataPipelineService.GetDataPipelineByIdAsync(id);
+            if (pipeline == null)
+                return NotFound();
 
-    //    [SwaggerOperation(Summary = "Update a existing data pipeline")]
-    //    [HttpPut]
-    //    public IActionResult Update(UpdateDataPipelineDto updateDataPipeline)
-    //    {
-    //        _dataPipelineService.UpdateDataPipeline(updateDataPipeline);
-    //        return NoContent();
-    //    }
+            return Ok(pipeline);
+        }
 
-    //    [SwaggerOperation(Summary ="Delete a specific data pipeline")]
-    //    [HttpDelete]
-    //    public IActionResult Delete(Guid id)
-    //    {
-    //        _dataPipelineService.DeleteDataPipeline(id);
-    //        return NoContent();
-    //    }
+        // GET: api/DataPipelines/user/{userId}
+        [HttpGet("user/{userId}")]
+        public async Task<ActionResult<IEnumerable<DataPipelineDto>>> GetAllByUserId(string userId)
+        {
+            var pipelines = await _dataPipelineService.GetAllDataPipelinesByUserIdAsync(userId);
+            return Ok(pipelines);
+        }
+
+        // POST: api/DataPipelines
+        [HttpPost]
+        public async Task<ActionResult<DataPipelineDto>> Create([FromBody] DataPipelineDto dto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var created = await _dataPipelineService.CreateDataPipelineAsync(dto);
+            // Zwracamy 201 + Location nagłówek na świeżo utworzony zasób
+            return CreatedAtAction(nameof(Get), new { id = created.Id }, created);
+        }
+
+        // PUT: api/DataPipelines/{id}
+        [HttpPut("{id:guid}")]
+        public async Task<ActionResult<DataPipelineDto>> Update(Guid id, [FromBody] DataPipelineDto dto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            // Upewniamy się, że ID w dto jest zgodne z tym z URL
+            if (id != dto.Id)
+                return BadRequest("IDs do not match.");
+
+            var updated = await _dataPipelineService.UpdateDataPipelineAsync(dto);
+            if (updated == null)
+                return NotFound();
+
+            return Ok(updated);
+        }
+
+        // DELETE: api/DataPipelines/{id}
+        [HttpDelete("{id:guid}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            await _dataPipelineService.DeleteDataPipelineAsync(id);
+            // Jeśli usuwanie zakończyło się powodzeniem, zwracamy 204 (No Content)
+            return NoContent();
+        }
     }
 }

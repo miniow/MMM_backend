@@ -10,3 +10,4 @@ C:\Users\zymci\source\repos\MarketingMixModeling\Domain\obj\Release\net8.0\Domai
 C:\Users\zymci\source\repos\MarketingMixModeling\Domain\obj\Release\net8.0\refint\Domain.dll
 C:\Users\zymci\source\repos\MarketingMixModeling\Domain\obj\Release\net8.0\Domain.pdb
 C:\Users\zymci\source\repos\MarketingMixModeling\Domain\obj\Release\net8.0\ref\Domain.dll
+C:\Users\zymci\source\repos\MarketingMixModeling\Domain\obj\Release\net8.0\Domain.sourcelink.json

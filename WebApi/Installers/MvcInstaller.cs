@@ -1,7 +1,6 @@
 ﻿
 using Application;
-
-using Microsoft.AspNetCore.Identity;
+using Infrastructure;
 
 namespace WebApi.Installers
 {
@@ -10,6 +9,7 @@ namespace WebApi.Installers
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
             services.AddApplication();
+            services.AddInfrastructure();
             services.AddControllers();
         }
     }

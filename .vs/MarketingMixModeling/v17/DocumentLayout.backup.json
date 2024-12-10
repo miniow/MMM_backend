@@ -3,40 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9BB1C887-4935-4F1B-9646-71155E0EC53D}|Infrastructure\\Infrastructure.csproj|c:\\users\\zymci\\source\\repos\\marketingmixmodeling\\infrastructure\\migrations\\applicationdb\\20241117233559_initialmigrationforfirstdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9BB1C887-4935-4F1B-9646-71155E0EC53D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\applicationdb\\20241117233559_initialmigrationforfirstdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A476B3B2-0A32-44A5-B7D4-925CE8AF2C11}|Application\\Application.csproj|c:\\users\\zymci\\source\\repos\\marketingmixmodeling\\application\\dtos\\datapipelinedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A476B3B2-0A32-44A5-B7D4-925CE8AF2C11}|Application\\Application.csproj|solutionrelative:application\\dtos\\datapipelinedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9BB1C887-4935-4F1B-9646-71155E0EC53D}|Infrastructure\\Infrastructure.csproj|c:\\users\\zymci\\source\\repos\\marketingmixmodeling\\infrastructure\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9BB1C887-4935-4F1B-9646-71155E0EC53D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A476B3B2-0A32-44A5-B7D4-925CE8AF2C11}|Application\\Application.csproj|c:\\users\\zymci\\source\\repos\\marketingmixmodeling\\application\\dtos\\workspacedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A476B3B2-0A32-44A5-B7D4-925CE8AF2C11}|Application\\Application.csproj|solutionrelative:application\\dtos\\workspacedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\Infrastructure\\Migrations\\ApplicationDbContext\\20241117233402_InitialMigrationForFirstDb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Infrastructure\\Migrations\\ApplicationDbContext\\20241117233402_InitialMigrationForFirstDb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A476B3B2-0A32-44A5-B7D4-925CE8AF2C11}|Application\\Application.csproj|c:\\users\\zymci\\source\\repos\\marketingmixmodeling\\application\\mappings\\mappingsprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A476B3B2-0A32-44A5-B7D4-925CE8AF2C11}|Application\\Application.csproj|solutionrelative:application\\mappings\\mappingsprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9BB1C887-4935-4F1B-9646-71155E0EC53D}|Infrastructure\\Infrastructure.csproj|c:\\users\\zymci\\source\\repos\\marketingmixmodeling\\infrastructure\\data\\userdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9BB1C887-4935-4F1B-9646-71155E0EC53D}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\data\\userdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A476B3B2-0A32-44A5-B7D4-925CE8AF2C11}|Application\\Application.csproj|c:\\users\\zymci\\source\\repos\\marketingmixmodeling\\application\\mappings\\imap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A476B3B2-0A32-44A5-B7D4-925CE8AF2C11}|Application\\Application.csproj|solutionrelative:application\\mappings\\imap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E80D3F8-8D1F-45C6-BAEF-832DB0CA7735}|Domain\\Domain.csproj|c:\\users\\zymci\\source\\repos\\marketingmixmodeling\\domain\\entities\\datapipeline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1E80D3F8-8D1F-45C6-BAEF-832DB0CA7735}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\datapipeline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1E80D3F8-8D1F-45C6-BAEF-832DB0CA7735}|Domain\\Domain.csproj|c:\\users\\zymci\\source\\repos\\marketingmixmodeling\\domain\\entities\\workspace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E80D3F8-8D1F-45C6-BAEF-832DB0CA7735}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\workspace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{74A8BFDF-5276-4297-8D57-AE0BD2E374FC}|WebApi\\WebApi.csproj|c:\\users\\zymci\\source\\repos\\marketingmixmodeling\\webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{74A8BFDF-5276-4297-8D57-AE0BD2E374FC}|WebApi\\WebApi.csproj|solutionrelative:webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A476B3B2-0A32-44A5-B7D4-925CE8AF2C11}|Application\\Application.csproj|c:\\users\\zymci\\source\\repos\\marketingmixmodeling\\application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A476B3B2-0A32-44A5-B7D4-925CE8AF2C11}|Application\\Application.csproj|solutionrelative:application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\mmm-platform\\services\\DataIntegration\\WebApi\\Properties\\launchSettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{74A8BFDF-5276-4297-8D57-AE0BD2E374FC}|WebApi\\WebApi.csproj|c:\\users\\zymci\\source\\repos\\marketingmixmodeling\\webapi\\controllers\\workspacecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74A8BFDF-5276-4297-8D57-AE0BD2E374FC}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\workspacecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\mmm-platform\\services\\DataIntegration\\WebApi\\WebApi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+      "AbsoluteMoniker": "D:0:0:{74A8BFDF-5276-4297-8D57-AE0BD2E374FC}|WebApi\\WebApi.csproj|c:\\users\\zymci\\source\\repos\\marketingmixmodeling\\webapi\\controllers\\datapipelinescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74A8BFDF-5276-4297-8D57-AE0BD2E374FC}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\datapipelinescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\mmm-platform\\services\\DataIntegration\\WebApi\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A476B3B2-0A32-44A5-B7D4-925CE8AF2C11}|Application\\Application.csproj|c:\\users\\zymci\\source\\repos\\marketingmixmodeling\\application\\interfaces\\idatapipelineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A476B3B2-0A32-44A5-B7D4-925CE8AF2C11}|Application\\Application.csproj|solutionrelative:application\\interfaces\\idatapipelineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\mmm-platform\\services\\DataIntegration\\WebApi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{A476B3B2-0A32-44A5-B7D4-925CE8AF2C11}|Application\\Application.csproj|c:\\users\\zymci\\source\\repos\\marketingmixmodeling\\application\\services\\datapipelineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A476B3B2-0A32-44A5-B7D4-925CE8AF2C11}|Application\\Application.csproj|solutionrelative:application\\services\\datapipelineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,120 +50,137 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "20241117233559_InitialMigrationForFirstDb.cs",
-              "DocumentMoniker": "C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\Infrastructure\\Migrations\\ApplicationDb\\20241117233559_InitialMigrationForFirstDb.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\ApplicationDb\\20241117233559_InitialMigrationForFirstDb.cs",
-              "ToolTip": "C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\Infrastructure\\Migrations\\ApplicationDb\\20241117233559_InitialMigrationForFirstDb.cs",
-              "RelativeToolTip": "Infrastructure\\Migrations\\ApplicationDb\\20241117233559_InitialMigrationForFirstDb.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAqAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\Application\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "Application\\DependencyInjection.cs",
+              "ToolTip": "C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\Application\\DependencyInjection.cs",
+              "RelativeToolTip": "Application\\DependencyInjection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T23:35:59.485Z",
+              "WhenOpened": "2024-12-10T00:16:10.001Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "20241117233402_InitialMigrationForFirstDb.cs",
-              "DocumentMoniker": "C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\Infrastructure\\Migrations\\ApplicationDbContext\\20241117233402_InitialMigrationForFirstDb.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\ApplicationDbContext\\20241117233402_InitialMigrationForFirstDb.cs",
-              "ToolTip": "C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\Infrastructure\\Migrations\\ApplicationDbContext\\20241117233402_InitialMigrationForFirstDb.cs",
-              "RelativeToolTip": "Infrastructure\\Migrations\\ApplicationDbContext\\20241117233402_InitialMigrationForFirstDb.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "MappingsProfile.cs",
+              "DocumentMoniker": "C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\Application\\Mappings\\MappingsProfile.cs",
+              "RelativeDocumentMoniker": "Application\\Mappings\\MappingsProfile.cs",
+              "ToolTip": "C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\Application\\Mappings\\MappingsProfile.cs",
+              "RelativeToolTip": "Application\\Mappings\\MappingsProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T23:34:02.371Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\Infrastructure\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\Infrastructure\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "Infrastructure\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T23:09:37.596Z"
+              "WhenOpened": "2024-12-10T00:17:03.899Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "DataPipeline.cs",
-              "DocumentMoniker": "C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\Domain\\Entities\\DataPipeline.cs",
-              "RelativeDocumentMoniker": "Domain\\Entities\\DataPipeline.cs",
-              "ToolTip": "C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\Domain\\Entities\\DataPipeline.cs",
-              "RelativeToolTip": "Domain\\Entities\\DataPipeline.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAOAAAAAAAAAA==",
+              "Title": "Workspace.cs",
+              "DocumentMoniker": "C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\Domain\\Entities\\Workspace.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Workspace.cs",
+              "ToolTip": "C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\Domain\\Entities\\Workspace.cs",
+              "RelativeToolTip": "Domain\\Entities\\Workspace.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T23:32:57.803Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\WebApi\\Program.cs",
-              "RelativeDocumentMoniker": "WebApi\\Program.cs",
-              "ToolTip": "C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\WebApi\\Program.cs",
-              "RelativeToolTip": "WebApi\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T23:04:33.462Z"
+              "WhenOpened": "2024-12-10T00:16:11.575Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "UserDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\Infrastructure\\Data\\UserDbContext.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Data\\UserDbContext.cs",
-              "ToolTip": "C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\Infrastructure\\Data\\UserDbContext.cs",
-              "RelativeToolTip": "Infrastructure\\Data\\UserDbContext.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAAAB0AAAAJAAAAAAAAAA==",
+              "Title": "IMap.cs",
+              "DocumentMoniker": "C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\Application\\Mappings\\IMap.cs",
+              "RelativeDocumentMoniker": "Application\\Mappings\\IMap.cs",
+              "ToolTip": "C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\Application\\Mappings\\IMap.cs",
+              "RelativeToolTip": "Application\\Mappings\\IMap.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T00:08:04.778Z"
+              "WhenOpened": "2024-12-10T00:08:09.659Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WorkspaceDto.cs",
+              "DocumentMoniker": "C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\Application\\DTOs\\WorkspaceDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\WorkspaceDto.cs",
+              "ToolTip": "C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\Application\\DTOs\\WorkspaceDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\WorkspaceDto.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAA5wCAAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T00:04:25.319Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DataPipelineDto.cs",
+              "DocumentMoniker": "C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\Application\\DTOs\\DataPipelineDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\DataPipelineDto.cs",
+              "ToolTip": "C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\Application\\DTOs\\DataPipelineDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\DataPipelineDto.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA1wB8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T23:53:06.846Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "WebApi.http",
-              "DocumentMoniker": "D:\\mmm-platform\\services\\DataIntegration\\WebApi\\WebApi.http",
-              "ToolTip": "D:\\mmm-platform\\services\\DataIntegration\\WebApi\\WebApi.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2024-11-16T20:53:06.629Z"
+              "Title": "DataPipelinesController.cs",
+              "DocumentMoniker": "C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\WebApi\\Controllers\\DataPipelinesController.cs",
+              "RelativeDocumentMoniker": "WebApi\\Controllers\\DataPipelinesController.cs",
+              "ToolTip": "C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\WebApi\\Controllers\\DataPipelinesController.cs",
+              "RelativeToolTip": "WebApi\\Controllers\\DataPipelinesController.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAQwCsAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T23:52:11.813Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\mmm-platform\\services\\DataIntegration\\WebApi\\Program.cs",
-              "ToolTip": "D:\\mmm-platform\\services\\DataIntegration\\WebApi\\Program.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAxwBEAAAAAAAAAAAAAAA==",
+              "Title": "IDataPipelineService.cs",
+              "DocumentMoniker": "C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\Application\\Interfaces\\IDataPipelineService.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IDataPipelineService.cs",
+              "ToolTip": "C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\Application\\Interfaces\\IDataPipelineService.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IDataPipelineService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T23:29:56.927Z"
+              "WhenOpened": "2024-12-09T23:50:56.335Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "D:\\mmm-platform\\services\\DataIntegration\\WebApi\\Properties\\launchSettings.json",
-              "ToolTip": "D:\\mmm-platform\\services\\DataIntegration\\WebApi\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-16T20:53:23.678Z"
+              "Title": "WorkspaceController.cs",
+              "DocumentMoniker": "C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\WebApi\\Controllers\\WorkspaceController.cs",
+              "RelativeDocumentMoniker": "WebApi\\Controllers\\WorkspaceController.cs",
+              "ToolTip": "C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\WebApi\\Controllers\\WorkspaceController.cs",
+              "RelativeToolTip": "WebApi\\Controllers\\WorkspaceController.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAYwEYAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T20:22:11.137Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\mmm-platform\\services\\DataIntegration\\WebApi\\appsettings.json",
-              "ToolTip": "D:\\mmm-platform\\services\\DataIntegration\\WebApi\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-13T00:35:42.726Z"
+              "Title": "DataPipelineService.cs",
+              "DocumentMoniker": "C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\Application\\Services\\DataPipelineService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\DataPipelineService.cs",
+              "ToolTip": "C:\\Users\\zymci\\source\\repos\\MarketingMixModeling\\Application\\Services\\DataPipelineService.cs",
+              "RelativeToolTip": "Application\\Services\\DataPipelineService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T23:50:53.66Z",
+              "EditorCaption": ""
             }
           ]
         }

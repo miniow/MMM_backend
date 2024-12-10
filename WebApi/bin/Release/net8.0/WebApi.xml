@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:WebApi.Controllers.WorkspaceController">
+            <summary>
+            Kontroler obsługujący zarządzanie przestrzeniami roboczymi (workspaces).
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.WorkspaceController.GetWorkspaces">
+            <summary>
+            Pobiera wszystkie przestrzenie robocze przypisane do aktualnie zalogowanego użytkownika.
+            </summary>
+            <returns>Lista przestrzeni roboczych użytkownika.</returns>
+        </member>
+        <member name="M:WebApi.Controllers.WorkspaceController.GetWorkspace(System.Guid)">
+            <summary>
+            Pobiera szczegóły określonej przestrzeni roboczej na podstawie jej identyfikatora.
+            </summary>
+            <param name="id">Identyfikator przestrzeni roboczej.</param>
+            <returns>Szczegóły przestrzeni roboczej.</returns>
+        </member>
+        <member name="M:WebApi.Controllers.WorkspaceController.CreateWorkspace(Application.DTOs.WorkspaceDto)">
+            <summary>
+            Tworzy nową przestrzeń roboczą.
+            </summary>
+            <param name="workspaceDto">Dane przestrzeni roboczej.</param>
+            <returns>Utworzona przestrzeń robocza.</returns>
+        </member>
+        <member name="M:WebApi.Controllers.WorkspaceController.UpdateWorkspace(System.Guid,Application.DTOs.WorkspaceDto)">
+            <summary>
+            Aktualizuje istniejącą przestrzeń roboczą.
+            </summary>
+            <param name="id">Identyfikator przestrzeni roboczej.</param>
+            <param name="workspaceDto">Zaktualizowane dane przestrzeni roboczej.</param>
+            <returns>Odpowiedź HTTP wskazująca status operacji.</returns>
+        </member>
+        <member name="M:WebApi.Controllers.WorkspaceController.DeleteWorkspace(System.Guid)">
+            <summary>
+            Usuwa przestrzeń roboczą na podstawie jej identyfikatora.
+            </summary>
+            <param name="id">Identyfikator przestrzeni roboczej.</param>
+            <returns>Odpowiedź HTTP wskazująca status operacji.</returns>
+        </member>
+    </members>
+</doc>
