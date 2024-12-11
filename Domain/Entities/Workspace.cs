@@ -10,6 +10,7 @@ namespace Domain.Entities
         public string UserId { get; set; } = string.Empty;
         public bool IsFavorite { get; set; }
 
+        public Guid? DataPipelineId { get; set; }
         public DataPipeline? DataPipeline { get; set; }
     }
 }

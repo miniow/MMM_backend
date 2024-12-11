@@ -8,84 +8,75 @@ namespace Application.Services
 {
     public class DataPipelineService : IDataPipelineService
     {
-        private readonly IDataPipelineRepository _repository;
-        private readonly IMapper _mapper;
+        private readonly IDataPipelineRepository _pipelineRepository;
+        private readonly IDataFlowRepository _dataFlowRepository;
 
-        public DataPipelineService(IDataPipelineRepository repository, IMapper mapper)
+        public DataPipelineService(IDataPipelineRepository pipelineRepository, IDataFlowRepository dataFlowRepository)
         {
-            _mapper = mapper;
-            _repository = repository;
+            _pipelineRepository = pipelineRepository;
+            _dataFlowRepository = dataFlowRepository;
         }
 
-        // Pobranie konkretnego pipeline po Id
-        public async Task<DataPipelineDto> GetDataPipelineByIdAsync(Guid id)
+        public async Task<DataPipeline> CreatePipelineAsync(string name, string userId)
         {
-            var pipeline = await _repository.GetByIdAsync(id);
-            if (pipeline == null)
-                return null;
+            var pipeline = new DataPipeline
+            {
+                Id = Guid.NewGuid(),
+                Name = name,
+                UserId = userId,
+                Status = PipelineStatus.Draft,
+                CreatedAt = DateTime.UtcNow,
+                LastExecutedAt = DateTime.UtcNow,
+                DataFlowId = string.Empty
+            };
 
-            return _mapper.Map<DataPipelineDto>(pipeline);
+            await _pipelineRepository.AddAsync(pipeline);
+            return pipeline;
         }
 
-        // Utworzenie nowego pipeline
-        public async Task<DataPipelineDto> CreateDataPipelineAsync(DataPipelineDto pipelineDto)
+        public async Task DeletePipelineAsync(Guid id)
         {
-            // Mapujemy DTO -> Encja domenowa
-            var pipeline = _mapper.Map<DataPipeline>(pipelineDto);
-            pipeline.Id = Guid.NewGuid(); // Generujemy nowy Id, jeśli encja nie robi tego sama
+            await _pipelineRepository.DeleteAsync(id);
 
-            await _repository.AddAsync(pipeline);
-            var success = await _repository.SaveChangesAsync();
-
-            if (!success)
-                throw new Exception("Failed to create DataPipeline.");
-
-            // Mapujemy z powrotem do DTO (teraz pipeline ma już Id itp.)
-            return _mapper.Map<DataPipelineDto>(pipeline);
         }
 
-        // Usunięcie pipeline po Id
-        public async Task DeleteDataPipelineAsync(Guid id)
+        public async Task<IEnumerable<DataPipeline>> GetAllPipelinesAsync(string userId)
         {
-            await _repository.DeleteAsync(id);
-            var success = await _repository.SaveChangesAsync();
-
-            if (!success)
-                throw new Exception("Failed to delete DataPipeline.");
+            return await _pipelineRepository.GetByUserIdAsync(userId);
         }
 
-        // Pobranie wszystkich pipeline-ów dla danego użytkownika
-        // Zakładamy, że mamy metodę w repozytorium GetByUserIdAsync
-        public async Task<IEnumerable<DataPipelineDto>> GetAllDataPipelinesByUserIdAsync(string userId)
+        public async Task<DataPipeline> GetPipelineByIdAsync(Guid id)
         {
-            var pipelines = await _repository.GetByUserIdAsync(userId);
-            return _mapper.Map<IEnumerable<DataPipelineDto>>(pipelines);
+            return await _pipelineRepository.GetByIdAsync(id);
         }
 
-        // Aktualizacja pipeline
-        public async Task<DataPipelineDto> UpdateDataPipelineAsync(DataPipelineDto pipelineDto)
+        public async Task<DataPipeline> UpdatePipelineDataFlowAsync(Guid pipelineId, string dataFlowJson)
         {
-            var pipeline = await _repository.GetByIdAsync(pipelineDto.Id);
-            if (pipeline == null)
-                return null;
+            var pipeline = await _pipelineRepository.GetByIdAsync(pipelineId);
+            if (pipeline == null) throw new Exception("Pipeline not found.");
 
-            // Aktualizujemy właściwości encji
-            pipeline.Name = pipelineDto.Name;
-            pipeline.Status = pipelineDto.Status;
-            pipeline.LastExecutedAt = pipelineDto.LastExecutedAt;
+            // Zapis DataFlow do MongoDB
+            string dataFlowId = string.Empty;
+            if (string.IsNullOrEmpty(pipeline.DataFlowId))
+            {
+                dataFlowId = await _dataFlowRepository.CreateAsync(dataFlowJson);
+                pipeline.DataFlowId = dataFlowId;
+            }
+            else
+            {
+                await _dataFlowRepository.UpdateAsync(pipeline.DataFlowId, dataFlowJson);
+            }
 
-            // Zależnie od potrzeb aktualizujemy także kolekcje Sources, Transforms, Destination itp.
-            // Możliwe, że potrzebne będą osobne metody lub logika w repozytorium do aktualizacji powiązań.
-            // Przykład prostej aktualizacji Destination (jeśli jest w DTO i wymaga aktualizacji):
-            // pipeline.Destination = _mapper.Map<DataDestination>(pipelineDto.Destination);
+            pipeline.LastModifiedAy = DateTime.UtcNow;
+            await _pipelineRepository.UpdateAsync(pipeline);
 
-            await _repository.UpdateAsync(pipeline);
-            var success = await _repository.SaveChangesAsync();
-
-            if (!success)
-                throw new Exception("Failed to update DataPipeline.");
-
-            return _mapper.Map<DataPipelineDto>(pipeline);
+            // Możesz załadować DataFlow z MongoDB, jeśli chcesz zwrócić pełny obiekt
+            return pipeline;
         }
+        //public async Task<string> GetDataFlow(Guid pipelineId)
+        //{
+        //    var pipeline = await _pipelineRepository.GetByIdAsync(pipelineId);
+        //    if (pipeline == null) throw new Exception("Pipeline not found.");
+        //}
     }
 }

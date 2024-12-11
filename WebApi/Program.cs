@@ -1,6 +1,7 @@
 
 using Domain.Entities;
 using Infrastructure.Data;
+using Infrastructure.Settings;
 using Microsoft.AspNetCore.Identity;
 using Serilog;
 using System.Security.Claims;
@@ -21,19 +22,24 @@ namespace WebApi
 
 
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddAuthorization();
-            builder.Services.AddAuthentication(options =>
-            {
-                options.DefaultAuthenticateScheme = IdentityConstants.ApplicationScheme;
-                options.DefaultChallengeScheme = IdentityConstants.ApplicationScheme;
-                options.DefaultSignInScheme = IdentityConstants.ApplicationScheme;
-            })
-                .AddCookie(IdentityConstants.ApplicationScheme)
-                .AddBearerToken(IdentityConstants.BearerScheme);
+         
             builder.Services.AddIdentityCore<User>()
                 .AddEntityFrameworkStores<UserDbContext>()
                 .AddDefaultTokenProviders()
                 .AddApiEndpoints();
+            builder.Services.AddAuthorization();
+            builder.Services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = IdentityConstants.BearerScheme;
+                options.DefaultChallengeScheme = IdentityConstants.BearerScheme;
+                options.DefaultSignInScheme = IdentityConstants.ApplicationScheme;
+            })
+                .AddCookie(IdentityConstants.ApplicationScheme)
+                .AddBearerToken(IdentityConstants.BearerScheme);
+            builder.Services.Configure<MongoSettings>(
+    builder.Configuration.GetSection("MongoSettings"));
+
+
 
             builder.Services.AddCors(options =>
             {

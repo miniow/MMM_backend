@@ -10,6 +10,7 @@ namespace Infrastructure
         {
             services.AddScoped<IWorkspaceRepository, WorkspaceRepository>();
             services.AddScoped<IDataPipelineRepository, DataPipelineRepository>();
+            services.AddScoped<IDataFlowRepository, DataFlowRepository>();
             return services;
         }
     }

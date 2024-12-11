@@ -1,5 +1,8 @@
 ﻿using Infrastructure.Data;
+using Infrastructure.Settings;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using MongoDB.Driver;
 
 namespace WebApi.Installers
 {
@@ -14,6 +17,19 @@ namespace WebApi.Installers
             services.AddDbContext<UserDbContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("UserDbConnection"),
                     sqlOptions => sqlOptions.MigrationsHistoryTable("__EFMigrationsHistory", "identity")));
+           
+            services.Configure<MongoSettings>(
+                configuration.GetSection("MongoSettings"));
+            services.AddSingleton<IMongoClient>(sp =>
+            {
+                var settings = sp.GetRequiredService<IOptions<MongoSettings>>().Value;
+                return new MongoClient(settings.ConnectionString);
+            });
+            services.AddScoped<IMongoDatabase>(sp =>
+            {
+                var settings = sp.GetRequiredService<IOptions<MongoSettings>>().Value;
+                return sp.GetRequiredService<IMongoClient>().GetDatabase(settings.DatabaseName);
+            });
         }
     }
 }

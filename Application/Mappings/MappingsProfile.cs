@@ -1,4 +1,6 @@
-﻿using AutoMapper;
+﻿using Application.DTOs;
+using AutoMapper;
+using Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +13,10 @@ namespace Application.Mappings
     public class MappingsProfile : Profile
     {
         public MappingsProfile() {
+            CreateMap<DataPipeline, DataPipelineDto>();
+            CreateMap<UpdateDataPipelineDto, DataPipeline>()
+                .ForAllMembers(opts => opts.Condition((src, dest, srcMember) => srcMember != null));
+
             ApplyMappingsFromAssembly(Assembly.GetExecutingAssembly());
         }
 

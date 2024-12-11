@@ -1,6 +1,26 @@
 [
   {
     "ContainingType": "WebApi.Controllers.DataPipelinesController",
+    "Method": "GetAll",
+    "RelativePath": "api/DataPipelines",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Application.DTOs.DataPipelineDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebApi.Controllers.DataPipelinesController",
     "Method": "Create",
     "RelativePath": "api/DataPipelines",
     "HttpMethod": "POST",
@@ -27,7 +47,7 @@
   },
   {
     "ContainingType": "WebApi.Controllers.DataPipelinesController",
-    "Method": "Get",
+    "Method": "GetById",
     "RelativePath": "api/DataPipelines/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -53,7 +73,7 @@
   },
   {
     "ContainingType": "WebApi.Controllers.DataPipelinesController",
-    "Method": "Update",
+    "Method": "UpdateDataFlow",
     "RelativePath": "api/DataPipelines/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -66,21 +86,11 @@
       },
       {
         "Name": "dto",
-        "Type": "Application.DTOs.DataPipelineDto",
+        "Type": "Application.DTOs.UpdateDataFlowDto",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "Application.DTOs.DataPipelineDto",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "WebApi.Controllers.DataPipelinesController",
@@ -100,29 +110,67 @@
   },
   {
     "ContainingType": "WebApi.Controllers.DataPipelinesController",
-    "Method": "GetAllByUserId",
-    "RelativePath": "api/DataPipelines/user/{userId}",
+    "Method": "AddDataFlow",
+    "RelativePath": "api/DataPipelines/dataflow",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "WebApi.Controllers.AddDataFlowDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.DataPipelinesController",
+    "Method": "GetDataFromWarehouse",
+    "RelativePath": "api/DataPipelines/getDataFromWarehouse",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "userId",
+        "Name": "datapipelineid",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.DataPipelinesController",
+    "Method": "SaveDataToWarehouse",
+    "RelativePath": "api/DataPipelines/saveDataToWarehouse",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "WebApi.Controllers.DataWarehouseDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.ModelsController",
+    "Method": "Analyze",
+    "RelativePath": "api/Models/analyze/{pipelineId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pipelineId",
         "Type": "System.String",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Application.DTOs.DataPipelineDto, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "WebApi.Controllers.WorkspaceController",

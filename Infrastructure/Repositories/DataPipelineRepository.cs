@@ -17,6 +17,7 @@ namespace Infrastructure.Repositories
         public async Task<DataPipeline> AddAsync(DataPipeline dataPipeline)
         {
             await _context.DataPipelines.AddAsync(dataPipeline);
+            await _context.SaveChangesAsync();
             return dataPipeline;
         }
 
@@ -32,22 +33,12 @@ namespace Infrastructure.Repositories
         public async Task<DataPipeline> GetByIdAsync(Guid id)
         {
             return await _context.DataPipelines
-              .Include(p => p.Sources)
-                  .ThenInclude(s => s.Columns)
-              .Include(p => p.Transforms)
-              .Include(p => p.Destination)
-              .Include(p => p.Connections)
               .FirstOrDefaultAsync(p => p.Id == id);
         }
 
         public async Task<IEnumerable<DataPipeline>> GetByUserIdAsync(string userId)
         {
             return await _context.DataPipelines
-              .Include(p => p.Sources)
-                  .ThenInclude(s => s.Columns)
-              .Include(p => p.Transforms)
-              .Include(p => p.Destination)
-              .Include(p => p.Connections)
               .Where(d => d.UserId == userId)
               .ToListAsync();
         }

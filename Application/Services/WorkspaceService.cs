@@ -23,13 +23,14 @@ namespace Application.Services
 
             return _mapper.Map<WorkspaceDto>(workspace);
         }
-        public async Task<WorkspaceDto> CreateWorkspaceAsync(WorkspaceDto workspaceDto)
+        public async Task<WorkspaceDto> CreateWorkspaceAsync(WorkspaceDto workspaceDto, string userId)
         {
             var workspace = new Workspace
             {
                 Id = Guid.NewGuid(),
                 Name = workspaceDto.Name,
-                UserId = workspaceDto.UserId
+                UserId = userId,
+                IsFavorite = false
             };
 
             await _workspaceRepository.AddAsync(workspace);
@@ -61,7 +62,6 @@ namespace Application.Services
                 return null;
 
             workspace.Name = workspaceDto.Name;
-            workspace.UserId = workspaceDto.UserId; // Aktualizacja UserId jeśli potrzebne
 
             await _workspaceRepository.UpdateAsync(workspace);
             var success = await _workspaceRepository.SaveChangesAsync();

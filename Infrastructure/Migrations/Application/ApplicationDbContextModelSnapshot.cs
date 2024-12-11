@@ -23,59 +23,6 @@ namespace Infrastructure.Infrastructure.Data.Migrations.Application
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Domain.Entities.Connection", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("DataPipelineId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("DestinationId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("SourceId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("DataPipelineId");
-
-                    b.HasIndex("DestinationId");
-
-                    b.HasIndex("SourceId");
-
-                    b.ToTable("Connections", "app");
-                });
-
-            modelBuilder.Entity("Domain.Entities.DataColumn", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("DataSourceId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("DataType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsNullable")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("DataSourceId");
-
-                    b.ToTable("DataColumn", "app");
-                });
-
             modelBuilder.Entity("Domain.Entities.DataPipeline", b =>
                 {
                     b.Property<Guid>("Id")
@@ -84,6 +31,10 @@ namespace Infrastructure.Infrastructure.Data.Migrations.Application
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("DataFlowId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("LastExecutedAt")
                         .HasColumnType("datetime2");
@@ -107,26 +58,6 @@ namespace Infrastructure.Infrastructure.Data.Migrations.Application
                     b.ToTable("DataPipelines", "app");
                 });
 
-            modelBuilder.Entity("Domain.Entities.DataPipelineBaseEntity", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasMaxLength(34)
-                        .HasColumnType("nvarchar(34)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("DataPipelineBaseEntity", "app");
-
-                    b.HasDiscriminator().HasValue("DataPipelineBaseEntity");
-
-                    b.UseTphMappingStrategy();
-                });
-
             modelBuilder.Entity("Domain.Entities.Workspace", b =>
                 {
                     b.Property<Guid>("Id")
@@ -135,6 +66,9 @@ namespace Infrastructure.Infrastructure.Data.Migrations.Application
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("DataPipelineId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsFavorite")
                         .HasColumnType("bit");
@@ -154,179 +88,18 @@ namespace Infrastructure.Infrastructure.Data.Migrations.Application
 
                     b.HasKey("Id");
 
+                    b.HasIndex("DataPipelineId");
+
                     b.ToTable("Workspaces", "app");
                 });
 
-            modelBuilder.Entity("Domain.Entities.DataDestination", b =>
+            modelBuilder.Entity("Domain.Entities.Workspace", b =>
                 {
-                    b.HasBaseType("Domain.Entities.DataPipelineBaseEntity");
-
-                    b.Property<Guid?>("DataPipelineId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasIndex("DataPipelineId")
-                        .IsUnique()
-                        .HasFilter("[DataPipelineId] IS NOT NULL");
-
-                    b.HasDiscriminator().HasValue("DataDestination");
-                });
-
-            modelBuilder.Entity("Domain.Entities.DataSource", b =>
-                {
-                    b.HasBaseType("Domain.Entities.DataPipelineBaseEntity");
-
-                    b.Property<Guid?>("DataPipelineId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasIndex("DataPipelineId");
-
-                    b.ToTable("DataPipelineBaseEntity", "app", t =>
-                        {
-                            t.Property("DataPipelineId")
-                                .HasColumnName("DataSource_DataPipelineId");
-
-                            t.Property("Description")
-                                .HasColumnName("DataSource_Description");
-
-                            t.Property("IsActive")
-                                .HasColumnName("DataSource_IsActive");
-
-                            t.Property("Name")
-                                .HasColumnName("DataSource_Name");
-                        });
-
-                    b.HasDiscriminator().HasValue("DataSource");
-                });
-
-            modelBuilder.Entity("Domain.Entities.DataTransformation", b =>
-                {
-                    b.HasBaseType("Domain.Entities.DataPipelineBaseEntity");
-
-                    b.Property<Guid?>("DataPipelineId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ExecutionOrder")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasIndex("DataPipelineId");
-
-                    b.ToTable("DataPipelineBaseEntity", "app", t =>
-                        {
-                            t.Property("DataPipelineId")
-                                .HasColumnName("DataTransformation_DataPipelineId");
-
-                            t.Property("Description")
-                                .HasColumnName("DataTransformation_Description");
-
-                            t.Property("IsActive")
-                                .HasColumnName("DataTransformation_IsActive");
-
-                            t.Property("Name")
-                                .HasColumnName("DataTransformation_Name");
-                        });
-
-                    b.HasDiscriminator().HasValue("DataTransformation");
-                });
-
-            modelBuilder.Entity("Domain.Entities.Connection", b =>
-                {
-                    b.HasOne("Domain.Entities.DataPipeline", null)
-                        .WithMany("Connections")
+                    b.HasOne("Domain.Entities.DataPipeline", "DataPipeline")
+                        .WithMany()
                         .HasForeignKey("DataPipelineId");
 
-                    b.HasOne("Domain.Entities.DataPipelineBaseEntity", "Destination")
-                        .WithMany()
-                        .HasForeignKey("DestinationId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("Domain.Entities.DataPipelineBaseEntity", "Source")
-                        .WithMany()
-                        .HasForeignKey("SourceId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Destination");
-
-                    b.Navigation("Source");
-                });
-
-            modelBuilder.Entity("Domain.Entities.DataColumn", b =>
-                {
-                    b.HasOne("Domain.Entities.DataSource", null)
-                        .WithMany("Columns")
-                        .HasForeignKey("DataSourceId");
-                });
-
-            modelBuilder.Entity("Domain.Entities.DataDestination", b =>
-                {
-                    b.HasOne("Domain.Entities.DataPipeline", null)
-                        .WithOne("Destination")
-                        .HasForeignKey("Domain.Entities.DataDestination", "DataPipelineId")
-                        .OnDelete(DeleteBehavior.Restrict);
-                });
-
-            modelBuilder.Entity("Domain.Entities.DataSource", b =>
-                {
-                    b.HasOne("Domain.Entities.DataPipeline", null)
-                        .WithMany("Sources")
-                        .HasForeignKey("DataPipelineId")
-                        .OnDelete(DeleteBehavior.Restrict);
-                });
-
-            modelBuilder.Entity("Domain.Entities.DataTransformation", b =>
-                {
-                    b.HasOne("Domain.Entities.DataPipeline", null)
-                        .WithMany("Transforms")
-                        .HasForeignKey("DataPipelineId")
-                        .OnDelete(DeleteBehavior.Restrict);
-                });
-
-            modelBuilder.Entity("Domain.Entities.DataPipeline", b =>
-                {
-                    b.Navigation("Connections");
-
-                    b.Navigation("Destination")
-                        .IsRequired();
-
-                    b.Navigation("Sources");
-
-                    b.Navigation("Transforms");
-                });
-
-            modelBuilder.Entity("Domain.Entities.DataSource", b =>
-                {
-                    b.Navigation("Columns");
+                    b.Navigation("DataPipeline");
                 });
 #pragma warning restore 612, 618
         }

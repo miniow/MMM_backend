@@ -33,6 +33,10 @@ namespace WebApi.Controllers
                 return Unauthorized();
 
             var workspaces = await _workspaceService.GetAllWorkspacesByUserIdAsync(userId);
+            if(workspaces == null)
+            {
+                return NotFound("no workspaces");
+            }
             return Ok(workspaces);
         }
 
@@ -47,11 +51,6 @@ namespace WebApi.Controllers
             var workspace = await _workspaceService.GetWorkspaceByIdAsync(id);
             if (workspace == null)
                 return NotFound();
-
-            // Opcjonalnie: Sprawdź, czy workspace należy do użytkownika
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (workspace.UserId != userId)
-                return Forbid();
 
             return Ok(workspace);
         }
@@ -68,9 +67,9 @@ namespace WebApi.Controllers
             if (string.IsNullOrEmpty(userId))
                 return Unauthorized();
 
-            workspaceDto.UserId = userId; // Przypisz UserId z kontekstu użytkownika
 
-            var createdWorkspace = await _workspaceService.CreateWorkspaceAsync(workspaceDto);
+
+            var createdWorkspace = await _workspaceService.CreateWorkspaceAsync(workspaceDto, userId);
             return CreatedAtAction(nameof(GetWorkspace), new { id = createdWorkspace.Id }, createdWorkspace);
         }
 
@@ -90,11 +89,6 @@ namespace WebApi.Controllers
             if (existingWorkspace == null)
                 return NotFound();
 
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (existingWorkspace.UserId != userId)
-                return Forbid();
-
-            workspaceDto.UserId = userId;
 
             var updatedWorkspace = await _workspaceService.UpdateWorkspaceAsync(workspaceDto);
             if (updatedWorkspace == null)
@@ -115,9 +109,6 @@ namespace WebApi.Controllers
             if (existingWorkspace == null)
                 return NotFound();
 
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (existingWorkspace.UserId != userId)
-                return Forbid();
 
             await _workspaceService.DeleteWorkspaceAsync(id);
             return NoContent();
